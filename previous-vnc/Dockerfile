@@ -10,6 +10,7 @@ RUN apt-get install -y libsdl2-dev
 RUN apt-get install -y libpcap-dev
 
 
+# https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-linux-docker-container
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Australia/Perth
 RUN apt-get install -y x11vnc xvfb firefox
