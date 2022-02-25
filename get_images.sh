@@ -1,0 +1,11 @@
+INPUT=https://winworldpc.com/download/0c6a74c3-8e53-3f11-c3a4-c2a90f7054ef/from/c3ae6ee2-8099-713d-3411-c3a6e280947e
+OUTPUT_FILE=NS33.7z
+OUTPUT_DIR=images
+OUTPUT_FILEPATH=$OUTPUT_DIR/$OUTPUT_FILE
+
+if [ ! -f "$OUTPUT_FILEPATH" ]; then
+	wget $INPUT -O $OUTPUT_FILEPATH
+fi
+
+7zr e $OUTPUT_FILEPATH -o$OUTPUT_DIR NS33_2GB.dd -r 
+
