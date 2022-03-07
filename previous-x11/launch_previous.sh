@@ -3,7 +3,8 @@ docker run \
 	-it \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v $HOME/.Xauthority:/root/.Xauthority \
-	--privileged \
-	-e DISPLAY=unix$DISPLAY \
+	--network host \
+	-e DISPLAY=$DISPLAY \
 	--name previous \
 	previous
+
