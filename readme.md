@@ -18,7 +18,8 @@ We define the service:
 
 `/etc/systemd/system/xpra@.service`
 
-```[Unit]
+```
+[Unit]
 Description=xpra display
 
 [Service]
@@ -28,11 +29,14 @@ EnvironmentFile=/etc/conf.d/xpra
 ExecStart=/usr/bin/xpra start :100 --no-daemon --systemd-run=no --bind-tcp=0.0.0.0:5900
 
 [Install]
-WantedBy=multi-user.target```
+WantedBy=multi-user.target
+```
 
 `/etc/conf.d/xpra`
 
-```ubuntu=:666```
+```
+ubuntu=:666
+```
 
 And then enable it:
 
